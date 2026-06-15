@@ -101,7 +101,10 @@ with col2:
     if not analytics_df.empty:
         # Distribution Visualization Chart
         fig, ax = plt.subplots(figsize=(6, 3.5))
-        sns.countplot(data=analytics_df, x='predicted_sentiment',order=['Positive','Negative'], palette=['#e74c3c', '#2ecc71'], ax=ax)
+        
+        # التعديل هنا: تم تعديل المصفوفة لتبدأ بالأخضر للـ Positive ثم الأحمر للـ Negative وتعديل الإملاء لـ 'Positive'
+        sns.countplot(data=analytics_df, x='predicted_sentiment', order=['Positive', 'Negative'], palette=['#2ecc71', '#e74c3c'], ax=ax)
+        
         ax.set_title("Overall Sentiment Distribution Trend")
         ax.set_xlabel("Sentiment Category")
         ax.set_ylabel("Review Count")
